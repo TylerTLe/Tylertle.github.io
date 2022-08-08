@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: radial-gradient(circle at 50%, hsl(0, 100%, 80%), hsl(90, 100%, 80%) 30%, hsl(180, 100%, 80%) 80%);
+  color: hsla(270, 100%, 30%, 0.25);
+}
+
+svg {
+  width: 100vmin;
+  height: 100vmin;
+  filter: url(#goo);
+}

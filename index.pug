@@ -1,0 +1,55 @@
+- const rad = (degree) => (degree * Math.PI) / 180;
+- const points = (vertices, size, outerSize) => {
+- const path = [];
+- for (let i = 0; i <= vertices; i++) {
+- const part = rad((360 / vertices) * (i + 0.25 * (vertices - 2)));
+- const x = (Math.cos(part) * size) / 2 + outerSize / 2;
+- const y = (Math.sin(part) * size) / 2 + outerSize / 2;
+- path.push(`${i === 0 ? 'M' : 'L'}${x},${y}`);
+- }
+- return path.join(' ');
+- }
+
+mixin balls(vertices, size, outerSize, items)
+  - const i = items - vertices + 4;
+  rect(
+    height=size / 8,
+    width=size / 2,
+    rx=size / 8,
+    fill="currentColor",
+    style=`
+      offset-path: path('${points(720, size, outerSize)}');
+      animation: followpath calc(var(--speed, ${items * 2}s) / ${i}) linear infinite;
+      animation-delay: calc(var(--speed, ${items * 2}s) / -8);
+    `
+  )
+
+- const items = 90;
+- const space = 0.1;
+- const outer = items * space + 1;
+- let depth = items + 1;
+svg(
+  viewBox=`-0.5 -0.5 ${outer + 1} ${outer + 1}`,
+  xmlns="http://www.w3.org/2000/svg",
+)
+  style
+    | @keyframes followpath {
+    |
+    | to {
+    |
+    | offset-distance: 100%;
+    |
+    | }
+    | }
+  defs
+    filter#goo
+      feGaussianBlur(in="SourceGraphic", stdDeviation="10", result="blur")
+      feColorMatrix(
+        in="blur",
+        mode="matrix",
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9",
+        result="goo"
+      )
+      feComposite(in="SourceGraphic", in2="goo", operator="atop")
+  while depth--
+    +balls(depth + 3,depth * space + 1, outer, items)
