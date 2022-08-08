@@ -1,0 +1,9 @@
+body {
+  margin:0;
+  background: #666;
+}
+
+canvas {
+  mix-blend-mode: lighten;
+  position: fixed;
+}
