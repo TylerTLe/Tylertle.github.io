@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap');
+
+$font1: 'Poppins', sans-serif;
+$font2: 'Lobster Two', cursive;
+
+$white:#fff;
+$black:#000;
+
+$primary-light: #f9fafb;
+$second-light:#f0f0f0;
+$third-light:#DADBDB;
+
+$primary-dark:#222;
+
+$primary-grey:#777;
+$second-grey:#4f4f4f;
+
+$first-dark-shadow: rgba(0,0,0,0.3);
+$first-white-shadow: rgba(255,255,255,0.3);
+
+$success: rgba(61, 168, 102, 0.6);
+$error: rgba(168, 30, 14, 0.6);
+
+$primary-blue:rgba(0, 239, 255, 0.6);
+
+@mixin reset() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: $font1;
+  }
+
+@mixin flexDisplay($vertical, $horizontal, $direction, $wrap) {
+    display: flex;
+    align-items: $vertical;
+    justify-content: $horizontal;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+/* GLOBAL CONFIG RESET */
+* {
+  @include reset();
+}
+
+select:focus, input:focus, button:focus{
+  outline:none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+background-color: $primary-dark;
+// overflow: hidden;
+
+@include flexDisplay(center, center, column, wrap);
+min-height: 100vh;
+}
+
+/* -------- TYPE SELECTORS --------- */
+
+/* -------- CLASS & ID --------- */
+
+.loader{
+  position: relative;
+  width: 300px;
+  height: 300px;
+
+  span{
+    position: absolute;
+      top: 0;
+      left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(36deg * var(--i)));
+
+    &::before{
+      content: '';
+      position: absolute;
+        top: 0;
+        left: 0;
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      border: 4px solid $primary-blue;
+      border-radius: 50%;
+      box-sizing: border-box;
+      box-shadow: 
+        0 0 20px $primary-blue,
+        -30px -30px 0px $primary-blue,
+        -30px -30px 20px $primary-blue,
+        30px 30px 0px $primary-blue,
+        30px 30px 20px $primary-blue,
+        30px -30px 0px $primary-blue,
+        30px -30px 20px $primary-blue,
+        -30px 30px 0px $primary-blue,
+        -30px 30px 20px $primary-blue;
+      animation: animateSpin 5s linear infinite;
+      animation-delay: calc(-5s * var(--i));
+      transition-duration: 2s;
+      transform-origin: 20px;
+      
+    }
+  }
+
+  &:hover{
+    span{
+      &::before{
+        box-shadow: 
+        0 0 20px $primary-blue,
+        -200px -200px 0px $primary-blue,
+        -200px -200px 20px $primary-blue,
+        200px 200px 0px $primary-blue,
+        200px 200px 20px $primary-blue,
+        200px -200px 0px $primary-blue,
+        200px -200px 20px $primary-blue,
+        -200px 200px 0px $primary-blue,
+        -200px 200px 20px $primary-blue;
+      transform-origin: 200px;
+      
+      }
+    }
+  }
+}
+
+/* -------- PSEUDO CLASS --------- */
+
+/* -------- ANIMATIONS --------- */
+
+@keyframes animateSpin {
+  0%{
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg) drop-shadow(0 0px 4px $white);
+    
+  }
+  50%{
+    transform: rotate(180deg);
+    filter: hue-rotate(180deg) drop-shadow(0px 0px 100px $white);
+  }
+  100%{
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg) drop-shadow(0px 0px 4px $white);
+  }
+}
+
+/* -------- MEDIA QUERY --------- */
+
+@media (max-width: 800px) {
+  
+}

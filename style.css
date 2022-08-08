@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
+/* GLOBAL CONFIG RESET */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+select:focus, input:focus, button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+/* -------- TYPE SELECTORS --------- */
+/* -------- CLASS & ID --------- */
+.loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(36deg * var(--i)));
+}
+.loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border: 4px solid rgba(0, 239, 255, 0.6);
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 239, 255, 0.6), -30px -30px 0px rgba(0, 239, 255, 0.6), -30px -30px 20px rgba(0, 239, 255, 0.6), 30px 30px 0px rgba(0, 239, 255, 0.6), 30px 30px 20px rgba(0, 239, 255, 0.6), 30px -30px 0px rgba(0, 239, 255, 0.6), 30px -30px 20px rgba(0, 239, 255, 0.6), -30px 30px 0px rgba(0, 239, 255, 0.6), -30px 30px 20px rgba(0, 239, 255, 0.6);
+  animation: animateSpin 5s linear infinite;
+  animation-delay: calc(-5s * var(--i));
+  transition-duration: 2s;
+  transform-origin: 20px;
+}
+.loader:hover span::before {
+  box-shadow: 0 0 20px rgba(0, 239, 255, 0.6), -200px -200px 0px rgba(0, 239, 255, 0.6), -200px -200px 20px rgba(0, 239, 255, 0.6), 200px 200px 0px rgba(0, 239, 255, 0.6), 200px 200px 20px rgba(0, 239, 255, 0.6), 200px -200px 0px rgba(0, 239, 255, 0.6), 200px -200px 20px rgba(0, 239, 255, 0.6), -200px 200px 0px rgba(0, 239, 255, 0.6), -200px 200px 20px rgba(0, 239, 255, 0.6);
+  transform-origin: 200px;
+}
+
+/* -------- PSEUDO CLASS --------- */
+/* -------- ANIMATIONS --------- */
+@keyframes animateSpin {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg) drop-shadow(0 0px 4px #fff);
+  }
+  50% {
+    transform: rotate(180deg);
+    filter: hue-rotate(180deg) drop-shadow(0px 0px 100px #fff);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg) drop-shadow(0px 0px 4px #fff);
+  }
+}
+/* -------- MEDIA QUERY --------- */
