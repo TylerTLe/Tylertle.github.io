@@ -8,7 +8,6 @@ body{
     background-color: #131316;
     font-family: 'Poppins', sans-serif;
     color: bisque;
-    font-weight: bold;
 }
 section{
     display: grid;
@@ -148,3 +147,4 @@ nav ul li a{
     left: 150px;
     font-size: 30px;
 }
+
