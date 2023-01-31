@@ -110,7 +110,7 @@ nav ul li a{
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
-    transition: all 2s;
+    transition: all 2.5s;
 }
 
 @media(prefers-reduced-motion) {
@@ -125,3 +125,10 @@ nav ul li a{
     transform: translateX(0);
 }
 
+.scroll-tracker {
+    height: 0.5rem;
+    background-color: #f48024;
+    position: fixed;
+    inset: 0 0 auto;
+    transform-origin: left;
+}
