@@ -133,17 +133,17 @@ nav ul li a{
 }
 .viewcounttop {
     position: absolute;
-    top: 820px;
+    top: 650px;
     left: 115px;
 }
 .viewcountbottom {
     position: absolute;
-    top: 900px;
-    left: 138px;
+    top: 720px;
+    left: 140px;
 }
 #count {
     position: absolute;
-    top: 850px;
+    top: 675px;
     left: 150px;
     font-size: 30px;
 }
