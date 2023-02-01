@@ -5,29 +5,67 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tyler Thai Le</title>
-	<link rel="stylesheet" href="styles/reset.css" media="screen">
+	<meta name="description" content="Personal Portfolio Website for Tyler Le" />
+	<meta name="keywords" content="HTML5, CSS, web development, personal portfilo, javascript" />
+	<meta name="author" content="TylerLe" />
+	<meta name="Image" content="#" itemprop="image">
 	<link rel="stylesheet" href="styles/styles.css" media="screen">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 	<script src="https://kit.fontawesome.com/52d1b302f8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+	<div class="viewcounttop"> This page had</div>
+	<div id="count"></div>
+	<div class="viewcountbottom">Visitors</div>
+	<div class="scroll-tracker"></div>
 	<div class="links">
 		<video autoplay loop muted plays-inline class="back-video">
 			<source src="images/background.mp4" type="video/mp4">
 		</video>
 		<nav>
 			<h3 class="logo">TL</h3>
+			<p id="count"></p>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Resume</a></li>
+				<li><a href="#">About me</a></li>
+				<li><a href="#">Skills</a></li>
+				<li><a href="#">Qualifications</a></li>
 				<li><a href="#">Certificates</a></li>
 				<li><a href="#"><i class="fa-brands  fa-linkedin-in"></i></a></li>
 				<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-			</ul>
 		</nav>
+
 		<div class="content">
-			<h1>Coming Soon...</h1>
-			<a href="#"> Contact Me <i class="fa-solid fa-paper-plane"></i></a>
+			<h1>Tyler Le</h1>
+			<h3>Software Developer | DevOps Engineer</h3>
+			<a href=mailto:tylertle00@gmail.com> Contact Me <i class="fa-solid fa-paper-plane"></i></a>
 		</div>
 	</div>
+
+	<section class="hidden">
+		<h1>About me</h1>
+		<br> 
+		<p>Hi! I'm a software development student at the Southern Alberta Institute of Technology (SAIT).</p>
+		<p>I am constantly seeking opportunities to learn and expand my knowledge.</p>
+		<p> All projects are built from the ground up, from planning and designing all the way to solving real-life problems with code.</p>
+	</section>
+
+	<section class="hidden skills section" id="skills">
+		<h2 class="section__title">Skills</h2>
+		<p>Coming Soon...</p>
+
+	</section>      
+    
+	<section class="hidden">
+		<h2>Qualifications</h2>
+		<p>Coming Soon...</p>
+	</section>
+
+	<section class="hidden">
+		<h2>Certificates</h2>
+		<p>Coming Soon...</p>
+	</section>
+
+	<script defer src="JS\app.js" type="module"></script>
 </body>
 </html>
