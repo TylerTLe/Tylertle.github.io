@@ -43,3 +43,27 @@ function updateVisitCount() {
     countEl.innerHTML = res.value;
   });
 }
+
+document.getElementById("scroll-button-1").addEventListener("click", function() {
+  document.getElementById("aboutme").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+document.getElementById("scroll-button-2").addEventListener("click", function() {
+  document.getElementById("skills").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+document.getElementById("scroll-button-3").addEventListener("click", function() {
+  document.getElementById("qualifications").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+document.getElementById("scroll-button-4").addEventListener("click", function() {
+  document.getElementById("certificates").scrollIntoView({
+    behavior: "smooth"
+  });
+});
