@@ -67,3 +67,14 @@ document.getElementById("scroll-button-4").addEventListener("click", function() 
     behavior: "smooth"
   });
 });
+
+function replaceVerticalScrolling(e){
+  if (e.deltaY !== 0) {
+    window.scroll(window.screenX + e.deltaY * 2, window.scrollY);
+    e.preventDefault();
+  }
+}
+const mediaQuery = window.matchMedia ( '(min-width: 770px' );
+if (mediaQuery.matches){
+  window.addEventListener('wheel', replaceVerticalScrolling);
+}

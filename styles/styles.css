@@ -8,6 +8,8 @@ body{
     background-color: #131316;
     font-family: 'Poppins', sans-serif;
     color: bisque;
+    overflow-y: hidden;
+    overscroll-behavior-y: none;
 }
 section{
     display: grid;
@@ -165,4 +167,9 @@ nav ul li a{
   section ul li{
     list-style: none;
     margin-bottom: 10px;
+  }
+
+  .allContent{
+    display: inline-flex;
+    width: 100vw;
   }
